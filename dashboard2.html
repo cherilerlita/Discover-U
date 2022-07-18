@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discovery-U | Dashboard</title>
+        <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css'>
+        <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body onload="loadMap()">
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex align-items-center justify-content-center">
+
+            <div class="col-md-12">
+                <form action="" id="sign-up">
+                    <div class="card px-5 py-5">
+                        <h5 class="mt-3">
+                            <img src="img/mini_discoveru.png" alt="Discovery-U">
+                        </h5> 
+                        <small class="mt-2 text-muted">Received Signal Strength Indicator Solution with BLE</small>
+                        <div class="text-center mt-4"> 
+                            <a href="dashboard.html" class="text-decoration-none" id="linkRegister">Click here to Refresh Position</a> 
+                            <span>||</span> 
+                            <a href="logout.html" class="text-decoration-none" id="linkSignIn">Logout</a>
+                            <hr>
+                            <div class="text-center mt-3"><canvas id="Canvas" width="600" height="600"></canvas></div>
+                            <div class="text-center mt-4" style="font-size:14px"> <span>Programmed by Cheril Erlita Zuliarty - Telkom University, 2022</span></div>
+                            <input type="hidden" id="posRefresh" value="0">
+                            <input type="hidden" id="posX" value="0">
+                            <input type="hidden" id="posY" value="0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+    </body>
+
+</html>

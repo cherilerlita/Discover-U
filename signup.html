@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery-U | Register</title>
+    <link rel="stylesheet" href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex align-items-center justify-content-center">
+            
+            <div class="col-md-6">
+                <form id="registerForm" method="POST" name="registration" onsubmit="return validateForm();">
+                    <div class="card px-5 py-5"> 
+                        <h5 class="mt-3">Register</h5> <small class="mt-2 text-muted">Please enter personal data in the fields below</small>
+						<div class="form-input"> <i class="fa fa-user"></i> <input id="FirstName" type="text" class="form-control"  placeholder="First Name" required> </div>
+						<div class="form-input"> <i class="fa fa-user"></i> <input id="LastName" type="text" class="form-control"  placeholder="Last Name" required> </div>
+                        <div class="form-input"> <i class="fa fa-envelope"></i> <input id="EmailAddress" type="email" class="form-control"  placeholder="Email Address" oninput="emailExist(this.value)" required> </div>
+                        
+                        <div class="form-input"> <i class="fa fa-lock"></i> <input id="Password" type="password" class="form-control" placeholder="Password" required> </div>
+						<div class="form-input"> <i class="fa fa-child"></i> <input id="Age" type="text" class="form-control"  placeholder="Age" required> </div>
+						<div class="form-input"><input type="radio" id="Male" name="Gender" value="Male" required>
+						<label for="Male">Male</label><br>
+						<input type="radio" id="Female" name="Gender" value="Female">
+						<label for="Female">Female</label><br></div><hr>
+                        <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="Agree"> <label class="form-check-label" for="flexCheckChecked"> I agree all the statements </label> </div> <button class="btn btn-primary mt-4 signup">Register Now</button>
+                        <div class="text-center mt-4"> <span>Already a member?</span> <a href="signin.html" class="text-decoration-none" id="linkLogin">Sign in</a> </div>
+                    </div>
+                </form>
+				<form id="thankYou" style="display: none;">
+                <div style="text-align: center" class="card px-5 py-5">
+				<div align="center"><img src="img/success.png" alt="success" width="211" height="192"></div>
+                    <h1>Thank You!</h1>
+                    <p>You have sucsessfully registered with us. You can <a href="signin.html">Sign in now</a></p>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript" src="js/aes.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+</body>
+</html>
+
+<script>
+			const form = document.getElementById("registerForm");
+			form.addEventListener("submit", function(e){
+				e.preventDefault();
+			});
+</script>

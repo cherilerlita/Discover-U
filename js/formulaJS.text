@@ -1,0 +1,86 @@
+var x1 = 0; // (akses point a / esp a X)
+var y1 = 11; // (akses point a / esp a Y)
+var x2 = 12; // (akses point b / esp b X)
+var y2 = 10; // (akses point b / esp b Y)
+var x3 = 9; // (akses point c / esp c X)
+var y3 = 0; // (akses point c / esp c Y)
+var x4 = 0; // (akses point d / esp d X)
+var y4 = 2; // (akses point d / esp d Y)
+var A1 = -82; // (ini adalah ketetapan jarak 1meter yg sudah di uji untuk akses point A  dengan cara mengambil data xample sebanyak 10 data, setelah itu data tersebut di rata-rata kan )
+var A2 = -86; // (ini adalah ketetapan jarak 1meter yg sudah di uji untuk akses point B  dengan cara mengambil data xample sebanyak 10 data, setelah itu data tersebut di rata-rata kan )
+var A3 = -71; // (ini adalah ketetapan jarak 1meter yg sudah di uji untuk akses point C  dengan cara mengambil data xample sebanyak 10 data, setelah itu data tersebut di rata-rata kan )
+var A4 = -82; // (ini adalah ketetapan jarak 1meter yg sudah di uji untuk akses point D  dengan cara mengambil data xample sebanyak 10 data, setelah itu data tersebut di rata-rata kan )
+
+var RSSI_A = 0;
+var RSSI_B = 0;
+var RSSI_C = 0;
+var RSSI_D = 0;
+
+// proses cari rumus jarak d trilateration
+// proses cari rumus jarak d trilateration untuk yg gate A
+var tahap1_hasild1 = A1 - RSSI_nilai_1; // D1 (jarak antara akses point A dengan itag  ) -4,5
+console.log('A1(-82) => ' + A1 + ' dan RSSI_nilai_1(-73) ' + RSSI_nilai_1 + ' hasilnya adalah ' + tahap1_hasild1);
+var tahap2_hasild1 = tahap1_hasild1 / 20; // D1 (jarak antara akses point A dengan itag  ) -4,5
+console.log(' hasil  dari di bagi 20' + tahap2_hasild1);
+var hasild1 = tahap2_hasild1 * 10; // D1 (jarak antara akses point A dengan itag  ) -4,5
+// var hasild1 = 10 * (A1 - RSSI_nilai_1) / 20; // D1 (jarak antara akses point A dengan itag  ) -4,5
+console.log('hasild1 => ' + hasild1 + ' seharusnya -4,5');
+
+// proses cari rumus jarak d trilateration untuk yg gate B
+// var hasild2 = 10 * (A2 + RSSI_nilai_2) / 20; // D2 (jarak antara akses point B dengan itag  )
+var tahap1_hasild2 = A2 - RSSI_nilai_2; // D1 (jarak antara akses point A dengan itag  ) -4,5
+var tahap2_hasild2 = tahap1_hasild2 / 20; // D1 (jarak antara akses point A dengan itag  ) -4,5
+var hasild2 = tahap2_hasild2 * 10; // D1 (jarak antara akses point A dengan itag  ) -4,5
+
+// proses cari rumus jarak d trilateration untuk yg gate C
+// var hasild3 = 10 * (A3 + RSSI_nilai_3) / 20; // D3 (jarak antara akses point C dengan itag  )
+var tahap1_hasild3 = A3 - RSSI_nilai_3; // D1 (jarak antara akses point A dengan itag  ) -4,5
+var tahap2_hasild3 = tahap1_hasild3 / 20; // D1 (jarak antara akses point A dengan itag  ) -4,5
+var hasild3 = tahap2_hasild3 * 10; // D1 (jarak antara akses point A dengan itag  ) -4,5
+
+//masuk ke rumus trilateration
+var h = -2 * x1 + 2 * x2;
+var i = -2 * y1 + 2 * y2;
+var j = hasild1 ** 2 - hasild2 ** 2 - x1 ** 2 + x2 ** 2 - y1 ** 2 + y2 ** 2;
+var k = -2 * x2 + 2 * x3;
+var l = -2 * y2 + 2 * y3;
+var m = hasild2 ** 2 - hasild3 ** 2 - x2 ** 2 + x3 ** 2 - y2 ** 2 + y3 ** 2;
+
+//data untuk mencari x
+var hasiljl = j * l;
+var hasilmi = m * i;
+var hasillh = l * h;
+var hasilik = i * k;
+
+//data untuk mencari Y
+var hasiljk = j * k;
+var hasilhm = h * m;
+
+//data atas X
+var hasilxx = hasiljl - hasilmi;
+//data bawah x
+var hasilxxx = hasillh - hasilik;
+
+//data atas Y
+var hasilyy = hasiljk - hasilhm;
+//data bawah Y
+var hasilyyy = hasilik - hasillh;
+
+//data pembagian X
+hasilxx1 = hasilxx / hasilxxx
+
+//data pembagian Y
+hasilyy1 = hasilyy / hasilyyy
+
+var marker = new Marker();
+
+// var posX = document.getElementById('posX');
+var posX = hasilxx1 * 50;
+console.log('posX 2 => ' + hasilxx1);
+console.log('posX fixel => ' + posX);
+// var posx = parseInt(posX.value);
+
+// var posY = document.getElementById('posY');
+var posY = hasilyy1 * 50;
+console.log('posY 8 => ' + hasilyy1);
+console.log('posY fixel => ' + posY);
