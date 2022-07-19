@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/style-dashboard.css" />
+
+    <title>Responsive bottom navigation</title>
+  </head>
+  <body onload="loadMap()">
+    <!--=============== HEADER ===============-->
+    <div class="sidebar" id="sidebar">
+      <div class="logo-details">
+        <div class="logo_name">Discover-u</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <!-- <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">File Manager</span>
+          </a>
+          <span class="tooltip">Files</span>
+        </li> -->
+        <!-- <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links_name">Order</span>
+          </a>
+          <span class="tooltip">Order</span>
+        </li> -->
+        <!-- <li>
+          <a href="#">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Saved</span>
+          </a>
+          <span class="tooltip">Saved</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li> -->
+        <li class="profile">
+          <!-- <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg">
+            <div class="name_job">
+              <div class="name">Prem Shahi</div>
+              <div class="job">Web designer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i> -->
+          <a href="logout.html">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Logout</span>
+          </a>
+          <span class="tooltip">Logout</span>
+          <div class="profile-details"></div>
+        </li>
+      </ul>
+    </div>
+    <section class="dashboard-section">
+      <div class="canvas-wrapper align-item-center justify-content-center">
+        <canvas id="Canvas" width="640" height="640"></canvas>
+      </div>
+
+      <div class="Refresh">
+        <input type="hidden" id="posRefresh" value="0" />
+        <input type="hidden" id="posX" value="0" />
+        <input type="hidden" id="posY" value="0" />
+      </div>
+    </section>
+
+    <!-- <nav class="nav container">
+        <a href="#" class="nav__logo">Discover-U</a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">
+                <i class="bx bx-home-alt nav__icon"></i>
+                <span class="nav__name">Home</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
+                <i class="bx bx-user nav__icon"></i>
+                <span class="nav__name">About</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
+                <i class="bx bx-book-alt nav__icon"></i>
+                <span class="nav__name">Skills</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link">
+                <i class="bx bx-briefcase-alt nav__icon"></i>
+                <span class="nav__name">Portfolio</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#contactme" class="nav__link">
+                <i class="bx bx-message-square-detail nav__icon"></i>
+                <span class="nav__name">Contactme</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <img src="assets/img/perfil.png" alt="" class="nav__img" />
+      </nav>
+    </div> -->
+
+    <!-- <main>
+      =============== HOME ===============
+      <section class="container section section__height" id="home">
+        <h2 class="section__title">Home</h2>
+      </section>
+
+      =============== ABOUT ===============
+      <section class="container section section__height" id="about">
+        <h2 class="section__title">About</h2>
+      </section>
+
+      =============== SKILLS ===============
+      <section class="container section section__height" id="skills">
+        <h2 class="section__title">Skills</h2>
+      </section>
+
+      =============== PORTFOLIO ===============
+      <section class="container section section__height" id="portfolio">
+        <h2 class="section__title">Portfolio</h2>
+      </section>
+
+      =============== CONTACTME ===============
+      <section class="container section section__height" id="contactme">
+        <h2 class="section__title">Contactme</h2>
+      </section>
+    </main> -->
+
+    <!--=============== MAIN JS ===============-->
+    <script>
+      let sidebar = document.querySelector('.sidebar');
+      let closeBtn = document.querySelector('#btn');
+      let searchBtn = document.querySelector('.bx-search');
+
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      searchBtn.addEventListener('click', () => {
+        // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle('open');
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains('open')) {
+          closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right'); //replacing the iocns class
+        } else {
+          closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu'); //replacing the iocns class
+        }
+      }
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  </body>
+</html>

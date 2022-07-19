@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discovery-U | Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-md align-items-center justify-content-center">
+      <div class="row">
+        <div class="col">
+          <form action="" id="adminForm" method="POST">
+            <div class="card">
+              <h2 class="text-center mb-3">Admin Menu</h2>
+              <small class="text-center mb-3 text-muted"
+                >This menu will be used to analyse encryption</small
+              >
+              <div class="col-12">
+                <div class="form-input">
+                  <i class="fa fa-envelope"></i>
+                  <input
+                    id="EmailAddress"
+                    type="email"
+                    class="form-control"
+                    placeholder="Email Address"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-input">
+                  <i class="fa fa-lock"></i>
+                  <input
+                    id="Password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-input">
+                  <input
+                    type="radio"
+                    id="AES"
+                    name="Encrypt"
+                    value="AES"
+                    checked
+                  />
+                  <label for="Encrypt">AES 192</label><br />
+                  <input type="radio" id="NE" name="Encrypt" value="NE" />
+                  <label for="Encrypt">No Encryption</label>
+                </div>
+              </div>
+              <button class="btn btn-primary mt-4 signup">Send Data</button>
+              <button class="btn btn-primary mt-4 signup" onclick="home()">
+                Home
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyC7-ILz-MKRbgK7IKvMXqHkjjfpoRNfMz0',
+        authDomain: 'appdiscoveru.firebaseapp.com',
+        projectId: 'appdiscoveru',
+        storageBucket: 'appdiscoveru.appspot.com',
+        messagingSenderId: '274869852575',
+        appId: '1:274869852575:web:13a1c4e6b7a0e78807c5aa',
+        measurementId: 'G-9V1BC84LBS',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    <script type="text/javascript" src="js/aes.js"></script>
+    <script src="js/admin.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  </body>
+</html>

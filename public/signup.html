@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discovery-U | Register</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-md align-items-center justify-content-center">
+      <div class="row">
+        <!-- <div class="col"></div> -->
+        <div class="col">
+          <h1 class="text-center mt-3 mb-3">Discover-U</h1>
+          <form id="registerForm" method="POST" name="registration">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="text-center mb-3" display="block">Register</h2>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-input">
+                      <i class="fa fa-user"></i>
+                      <input
+                        id="FirstName"
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-input">
+                      <i class="fa fa-user"></i>
+                      <input
+                        id="LastName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Last Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-input">
+                      <i class="fa fa-envelope"></i>
+                      <input
+                        id="EmailAddress"
+                        type="email"
+                        class="form-control"
+                        placeholder="Email Address"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-input">
+                      <i class="fa fa-lock"></i>
+                      <input
+                        id="Password"
+                        type="password"
+                        class="form-control"
+                        placeholder="Password"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-input">
+                      <i class="fa fa-child"></i>
+                      <input
+                        id="Age"
+                        type="text"
+                        class="form-control"
+                        placeholder="Age"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-input">
+                      <input
+                        type="radio"
+                        id="Male"
+                        name="Gender"
+                        value="Male"
+                        required
+                      />
+                      <label for="Male">Male</label><br />
+                      <input
+                        type="radio"
+                        id="Female"
+                        name="Gender"
+                        value="Female"
+                      />
+                      <label for="Female">Female</label><br />
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="Agree"
+                  />
+                  <label class="form-check-label" for="flexCheckChecked">
+                    I agree all the statements
+                  </label>
+                </div>
+                <button class="btn btn-primary mt-4 signup">
+                  Register Now
+                </button>
+                <div class="text-center mt-4">
+                  <span>Already a member?</span>
+                  <a
+                    href="index.html"
+                    class="text-decoration-none"
+                    id="linkLogin"
+                    >Sign in</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+          <form id="thankYou" style="display: none">
+            <div style="text-align: center" class="card px-5 py-5">
+              <div class="card-body">
+                <h5 class="text-center">
+                  <img src="img/success.png" alt="success" class="img-fluid" />
+                </h5>
+
+                <p class="h2 text-center mt-3 font-weight-bold">Thank You</p>
+                <p>
+                  You have successfully registered with us. You can
+                  <a href="index.html" class="text-decoration-none"
+                    >Sign in now</a
+                  >
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyC7-ILz-MKRbgK7IKvMXqHkjjfpoRNfMz0',
+        authDomain: 'appdiscoveru.firebaseapp.com',
+        projectId: 'appdiscoveru',
+        storageBucket: 'appdiscoveru.appspot.com',
+        messagingSenderId: '274869852575',
+        appId: '1:274869852575:web:13a1c4e6b7a0e78807c5aa',
+        measurementId: 'G-9V1BC84LBS',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    <script type="text/javascript" src="js/aes.js"></script>
+    <script src="js/signup.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  </body>
+</html>
